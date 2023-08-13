@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import News, Comment
+from django.shortcuts import render
+
 
 def news_list(request):
     news_list = News.objects.all().order_by('-created_at')
@@ -24,3 +26,6 @@ def add_news(request):
         return redirect('news_detail', news_id=news.pk)
     
     return render(request, 'news/add_news.html')
+
+def home(request):
+    return render(request, 'home.html')
