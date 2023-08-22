@@ -3,17 +3,16 @@
 {% block content %}
   <h1>{{ news.title }}</h1>
   <p>{{ news.content }}</p>
-  
   <h2>Comments</h2>
   <ul>
     {% for comment in comments %}
       <li>{{ comment.content }}</li>
     {% endfor %}
   </ul>
-  
+  <h3>Add Comment</h3>
   <form method="post">
     {% csrf_token %}
-    <textarea name="content" placeholder="Add a comment"></textarea>
-    <button type="submit">Submit</button>
+    {{ comment_form.as_p }}
+    <button type="submit">Add Comment</button>
   </form>
 {% endblock %}

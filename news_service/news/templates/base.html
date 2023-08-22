@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Service</title>
+    <title>{% block title %}My News Site{% endblock %}</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url 'news_list' %}">Home</a></li>
-            <li><a href="{% url 'add_news' %}">Add News</a></li>
-        </ul>
-    </nav>
+    <header>
+    </header>
+
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
+
+    <footer>
+    </footer>
 </body>
 </html>
