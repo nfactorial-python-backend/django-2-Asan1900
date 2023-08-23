@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{% block title %}My News Site{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}News App{% endblock %}</title>
 </head>
 <body>
     <header>
+        <h1>News App</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'news:news_list' %}">News List</a></li>
+            </ul>
+        </nav>
     </header>
-
+    
     <main>
         {% block content %}
         {% endblock %}
     </main>
 
     <footer>
+        <p>&copy; 2023 News App</p>
     </footer>
 </body>
 </html>
