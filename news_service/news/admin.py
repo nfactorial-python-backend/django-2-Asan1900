@@ -5,8 +5,9 @@ class CommentInline(admin.TabularInline):
     model = Comment
     extra = 5
 
+
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content', 'created_at', 'has_comments')
+    list_display = ('title', 'content', 'pub_date', 'author')
     inlines = [CommentInline]
 
 admin.site.register(News, NewsAdmin)
